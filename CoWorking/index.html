@@ -30,27 +30,49 @@
         <section class="item">
             <img src="img/cowork1.jpg" class="item-img" alt="A small cafeteria with a space for working">
             <div class="caption">
-                <p>Feeling hungry while working?Grab a quick snack from our cafeteria.</p>
-                <button>Book</button>
+                <p class="captionText">Feeling hungry while working?Grab a quick snack from our cafeteria.</p>
+                <button id="book">Book</button>
             </div>
         </section> 
         
         <section class="item">
             <img src="img/cowork2.jpg" class="item-img" alt="Bright working area with many lights">
             <div class="caption">
-                <p>Feeling sleepy while working because weather is bad? Use our cosy working place with open space and good lighting.</p>
-                <button>Book</button>
+                <p class="captionText">Feeling sleepy while working because weather is bad? Use our cosy working place with open space and good lighting.</p>
+                <button id="book1">Book</button>
             </div>
         </section> 
         
         <section class="item">
             <img src="img/cowork3.jpg" class="item-img" alt="A meeting area with a lot of tables">
             <div class="caption">
-                <p>Need a place to make your meetings? Select the meeting table of your choice in our spacious meeting area </p>
-                <button>Book</button>
+                <p class="captionText">Need a place to make your meetings? Select the meeting table of your choice in our spacious meeting area </p>
+                <button id="book2">Book</button>
             </div>
         </section>
-        
     </main>
+
+    <div id="chatBox">
+        <img class='chatBoxImg'src="img/message.png" alt="">
+    </div>
+
+
+    <div id="contact">
+        <div id="closeTagDiv">
+            <button id="closeTag">X</button>
+        </div>    
+        <div id="contactText">
+        <p id="contactTextStyle">Please enter your name and e-mail so we can contact you for available booking dates!</p>
+        </div>
+        <div id="form">        
+        <form id="contactForm">
+            <input type="text" name="fullName" placeholder="Enter your full name" required/>
+			<input type="email" name="email" placeholder="Enter your email" required/>
+            <div id="btndiv"><button type='submit' id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
