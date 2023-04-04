@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+.feed{
+    margin: auto;
+   
+}
+
+.coffee{
+    margin: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+.details{
+    display: flex;
+
+}
+
+.orderImg{
+    height: 100px;
+}
+
+.details{
+    margin: 10;
+}
+
+.coffeeName{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.headerParent{
+    margin: auto;
+    position: relative;
+    width: 400px;
+}
+
+.bannerText{
+   position: absolute;
+   left: 20px;
+   top: 38px;
+   font-size: 38px;
+   font-family: 'Amatic SC', cursive;
+
+  
+}
+
+
+.bannerImg{
+    width: 400px;
+
+}
