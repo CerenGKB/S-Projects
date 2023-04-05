@@ -24,12 +24,25 @@ body{
 
 }
 
+p{
+    padding-top: 4px;
+    padding-left: 10px;
+}
+
 .orderImg{
     height: 100px;
 }
 
+.coffeePlusDetails{
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+}
+
 .details{
-    margin: 10;
+    padding: 10px;
+    margin: 5;
+    border-bottom:1px solid #D2D2D2;
 }
 
 .coffeeName{
@@ -37,6 +50,16 @@ body{
     font-size: 22px;
 }
 
+.coffeeIngredient{
+    font-size: 14px;
+    color: #8B8B8B;
+    padding-bottom: 8px;
+}
+
+.coffeePrice{
+    padding-top: 5px;
+    font-weight: bold;
+}
 .headerParent{
     margin: auto;
     position: relative;
@@ -46,13 +69,21 @@ body{
 .bannerText{
    position: absolute;
    left: 20px;
-   top: 38px;
-   font-size: 38px;
+   top: 19px;
+   font-size: 39px;
    font-family: 'Amatic SC', cursive;
 
   
 }
 
+.plusButton{
+    height: 30px;
+    padding-top: 30px;
+}
+
+i{
+   font-size: 28px;
+}
 
 .bannerImg{
     width: 400px;
