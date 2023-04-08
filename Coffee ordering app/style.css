@@ -8,9 +8,63 @@ body{
     height: 100vh;
     margin: 0;
 }
-.feed{
+
+.orderText{
+    display: flex;
+    justify-content: flex-start;
+    width: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+.order{
     margin: auto;
-   
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 2px solid #393333;
+    flex-wrap: nowrap;
+}
+
+.orderBar{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+width: 77px;
+height: 22px;
+border-style: none;
+background-color: transparent;
+font-family: 'Verdana';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 24px;
+color: #BBBBBB;
+}
+
+.orderName{
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.orderPrice{
+    padding-top: 10px;
+    width: 30px;
+    padding-bottom: 20px;
+    padding-right:8px ;
+    font-size: 21px;
+}
+.orderTitle{
+    font-size: 26px;
+    width: 120px;
+    height: 30px;
+    margin: auto;
+
 }
 
 .coffee{
