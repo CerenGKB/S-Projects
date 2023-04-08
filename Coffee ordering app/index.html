@@ -21,7 +21,27 @@
     <div class="feed" id="feed"></div>
     <div id="orderTitle" class="orderTitle"> <p class="orderTitle">Your order</p></div>
 <div class="order" id="order"> 
+    
+    <!-- Other order items go here -->
 </div>
+<div id="completeOrder"><button type='submit' id="completeBtn">Complete Order</button>
+
+<div id="contact">
+    <div id="contactText">
+    <p id="contactTextStyle">Enter card details</p>
+    </div>
+    <div id="form">        
+    <form id="contactForm">
+        <input type="text" name="fullName" id="fullName" placeholder="Enter your full name" required/>
+        <input type="text" name="cardNumber" id="cardNumber" placeholder="Enter card number" required/>
+        <input type="text" name="cardCVV" id="cardCVV" placeholder="Enter CVV" required/>
+
+        <div id="btndiv"><button type='submit' id="submitBtn">Pay</button>
+        </div>
+    </form>
+    </div>
+</div>
+<div id="endText"><p class="classEndText">Thank you for your purchase.Your order is on its way!</p></div>
     <script src="script.js" type="module"></script>
 </body>
 </html>

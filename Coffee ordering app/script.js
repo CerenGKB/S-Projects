@@ -1,36 +1,49 @@
 import { coffeeArray } from "./coffeeData.js"
 
 const orderTitle = document.getElementById('orderTitle')
-orderTitle.style.display = "none"
+const completeBtn = document.getElementById('completeBtn')
+const completeOrder = document.getElementById('completeOrder')
+const endText = document.getElementById('endText')
+const order = document.getElementById('order')
+const contact = document.getElementById("contact")
 
+
+orderTitle.style.display = "none"
+completeOrder.style.display = "none"
+contact.style.display = "none"
+endText.style.display = "none"
 
 let orderArr = []
 
 // add event listener to the plus icons
 document.addEventListener('click', function(e) {
+// -------------ADD ITEM ---------  
  addItem(e)
-// -------------ADD ITEM ---------
-    
+ 
+ //  --------- REMOVE ITEM ----------                                               
+removeItem(e)                                                                       
 
- //  --------- REMOVE ITEM ----------
- if (e.target.dataset.remove) {
-    // extract the index of the clicked item
-    const index = e.target.dataset.remove;
-    // find the item in the orderArr
-    const removedCoffee = orderArr[index];
-    // decrease the quantity and update the price for each click on the "Remove" button
-    if (removedCoffee.quantity > 1) {
-        removedCoffee.quantity--;
-        removedCoffee.price -= removedCoffee.price / (removedCoffee.quantity + 1);
-    } else {
-        // if the quantity is 1, remove the item from the orderArr
-        orderArr.splice(index, 1);
-    }
-    // update the order HTML
-    const order = document.getElementById('order');
-    order.innerHTML = getOrderHtml();
-  }
+if(e.target.id === "completeBtn"){
+    contact.style.display = "block"
+    orderTitle.style.display = "none"
+    completeBtn.style.display = "none"
+    order.style.display = "none"
+}else if(e.target.id === "submitBtn"){
+    
+    e.preventDefault()
+    const inputs = document.querySelectorAll('#fullName,#cardNumber,#cardCVV')
+    inputs.forEach(input => {
+        input.value = ''
+    })
+    contact.style.display = "none"
+    endText.style.display= "block"
+}
+
+
 })
+
+
+
 
 function addItem(e){
     if (e.target.dataset.plus) {
@@ -59,15 +72,44 @@ function addItem(e){
         console.log(orderArr)
         
         orderTitle.style.display = "block"
+        completeOrder.style.display ="block"
+        
        const order = document.getElementById('order')
        order.innerHTML = getOrderHtml()
     }
 
 }
 
+function removeItem(e){
+    if (e.target.dataset.remove) {
+        // extract the index of the clicked item
+        const index = e.target.dataset.remove;
+        // find the item in the orderArr
+        const removedCoffee = orderArr[index];
+        // decrease the quantity and update the price for each click on the "Remove" button
+        if (removedCoffee.quantity > 1) {
+            removedCoffee.quantity--;
+            removedCoffee.price -= removedCoffee.price / (removedCoffee.quantity + 1);
+        } else {
+            // if the quantity is 1, remove the item from the orderArr
+            orderArr.splice(index, 1);
+        }
+        // update the order HTML
+        const order = document.getElementById('order');
+        order.innerHTML = getOrderHtml();
+        if (orderArr.length === 0) {
+            orderTitle.style.display = "none"
+            completeOrder.style.display ="none"
+            order.style.display = "none"
+          }
+      }
+}
+
+
 
 function getOrderHtml(){
     let orderHtml = ''
+    let totalPrice = 0
 
     orderArr.forEach((coffee,index) => {
         orderHtml += `
@@ -83,12 +125,25 @@ function getOrderHtml(){
         <div class="orderPrice">$${coffee.price}</div>
         </div>
         `
+        totalPrice += coffee.price
     })
+  
+
+    orderHtml += `
+    <div class="orderBar">
+    <div class="totalPriceElement" id="totalPriceElement"> 
+    <div class="orderText">
+      <div class="orderName">Total Price:</div>
+    </div>
+    <div class="orderPrice">$${totalPrice}</div>
+    </div>
+  </div>
+   
+  `
+
     return orderHtml
 
 }
-
-
 
 function getFeedHtml(){
     let feedHtml = ''
