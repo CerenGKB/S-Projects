@@ -37,11 +37,13 @@ if(e.target.id === "completeBtn"){
     })
     contact.style.display = "none"
     endText.style.display= "block"
+    setTimeout(() => {
+        window.location.reload()
+    },4000)
 }
 
 
 })
-
 
 
 
